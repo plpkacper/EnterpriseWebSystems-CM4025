@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="./scripts/myWebPage.js"></script>
 <head>
   <title>Price Calculator</title>
 </head>
@@ -11,33 +14,17 @@
 </div>
 
 <div>
-  <form id="budget" action="javascript:calculatePrice()">
+  <form id="budget" action="/calcPrice">>
     <label for="salary">What annual salary seems suitable for you?</label>
     <input type="text" id="salary" name="salary"/><br><br>
     <label for="days">How many days do you think it will take you to make the website?</label>
     <input type="text" id="days" name="days"/><br><br>
-    <input type="submit" value="Calculate your price!"><br><br>
+    <input type="button" id="calcButton" value="Calculate your price!">
     <label id="finalPrice"> ??? </label>
   </form>
 </div>
 
 <img src = "pic1.jfif">
-
-
-<script>
-  function calculatePrice() {
-    var s = document.getElementById("salary").value;
-    var d = document.getElementById("days").value;
-    console.log("Calculating price")
-    console.log(s)
-    console.log(d)
-    let finalPrice = 0;
-    dailyRate = s/365;
-    finalPrice = dailyRate * d;
-    finalPriceAdjusted = finalPrice % 50;
-    document.getElementById("finalPrice").innerHTML = finalPriceAdjusted;
-  }
-  </script>
 
 </body>
 </html>
